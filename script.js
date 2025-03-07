@@ -69,7 +69,10 @@ function resetState() {
 
 function selectAnswer(e) {
     const selectedButton = e.target;
+
+    selectedButton.classList.add('correct');
     const isCorrect = selectedButton.dataset.correct === "true";
+
     if(isCorrect){
         selectedButton.classList.add('correct');
         score++;
@@ -81,8 +84,6 @@ function selectAnswer(e) {
         if(button.dataset.correct === "true"){
             button.classList.add("correct");
         }
-
-        button.disabled = "true";
     });
     nextButton.style.display = "block";
 }
